@@ -1,0 +1,409 @@
+/********************
+    Materia: Estructura de Datos
+    autores: Ricardo Guzm�n - 737080
+            Ivan Rangel - 737680
+            Ruben Vega - 730919
+            Rodrigo Bohorquez - 733014
+********************/
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<string.h>
+#include<windows.h>
+
+//Arreglo de estructura para las boletas.
+struct Boleta{
+    int id;
+    int n[6];
+}boleta[100];
+
+//Capturacion de datos de boleta.
+void capturaBoleta(struct Boleta b[], int n, int cont){
+    char *sort[] = {"Primero", "Segundo", "Tercer", "Cuarto", "Quinto", "Sexto"};
+    int rep;
+    for(int i=cont; i<n; i++){
+        if (i == 0)
+        {
+            b[i].id = 1;
+        }else
+        {
+            b[i].id = b[i-1].id + 1;
+        }
+        printf("\n         Comenzando con la capturacion de numeros de la boleta:\t%d", b[i].id);
+        for (int j = 0; j < 6; j++)
+        {
+            printf("\nIngrese el %s numero deseado del 1 al 56 \n ", sort[j]);
+            scanf("%d",&b[i].n[j]);
+            while (b[i].n[j] < 1 || b[i].n[j] > 56)
+            {
+                printf("Favor de ingresar un numero entre 1 y 56...");
+                printf("\nIngrese el %s numero deseado del 1 al 56 \n ", sort[j]);
+                scanf("%d",&b[i].n[j]);
+            }
+            if (j>0)
+            {
+                do
+                {
+                    rep = 0;
+                    for (int k = 0; k<j ; k++)
+                    {
+                        if ( b[i].n[k] == b[i].n[j])
+                        {
+                            printf("\nNumero repetido, va de nuez...\n");
+                            rep = 1;
+                            printf("Ingrese el %s numero deseado del 1 al 56 \n ", sort[j]);
+                            scanf("%d",&b[i].n[j]); 
+                        }
+                    }
+                } while (rep==1);
+                rep = 0;
+            }
+
+        }
+    }
+    
+    system("pause");
+}
+
+
+//Ejecucion de sorteo Melate, Revancha y Revanchita
+
+
+//Muestra todas las boletas
+void reporteBoletasCapturadas(struct Boleta b[], int n){
+    for(int i=0; i<n; i++){
+        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+        for (int j = 0; j < 6; j++)
+        {
+            printf(" %d", b[i].n[j]);
+        }
+        printf("\n");
+    }
+}
+
+//Muestra las boletas ganadoras
+void reporteBoletasGanadores(int melate[],int revancha[],int revanchita[],struct Boleta b[], int n){
+    int i,j, op, numAcert=0, numAcertAdicional=0;
+    do{
+        printf("\n1. Melate");
+        printf("\n2. Revancha");
+        printf("\n3. Revanchita");
+        printf("\n0. Salir");
+        printf("\nIngrese el numero del sorteo que quiere verificar:     ");
+        scanf("%d",&op);
+        switch(op){
+            case 1:
+                numAcert = 0;
+                printf("GANADORES MELATE: \n");
+                for(i=0;i<n;i++){
+
+                    for (j = 0; j < 6; j++)
+                    {
+                        if (b[i].n[j] = melate[j])
+                        {
+                            if (j==7 && numAcert == 5)
+                            {
+                                numAcertAdicional+=1;
+                            }else
+                            {
+                                numAcert+=1;
+                            }
+                        }
+                    }
+                    if (numAcert == 6)
+                    {
+                        printf("\nPrimer lugar:  ");
+                        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+                        for (int j = 0; j < 6; j++)
+                        {
+                            printf(" %d", b[i].n[j]);
+                        }
+                    }else if (numAcert == 5 && numAcertAdicional == 1)
+                    {
+                        printf("\nSegundo lugar:  ");
+                        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+                        for (int j = 0; j < 6; j++)
+                        {
+                            printf(" %d", b[i].n[j]);
+                        }
+                    }else if (numAcert==5)
+                    {
+                        printf("\nTercer lugar:  ");
+                        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+                        for (int j = 0; j < 6; j++)
+                        {
+                            printf(" %d", b[i].n[j]);
+                        }
+                    }
+                }
+                printf("\n");
+                system("PAUSE");
+                break;
+            case 2:
+                numAcert = 0;
+                printf("GANADORES REVANCHA: \n");
+                for(i=0;i<n;i++){
+
+                    for (j = 0; j < 6; j++)
+                    {
+                        if (b[i].n[j] = revancha[j])
+                        {
+                            numAcert+=1;
+                        }
+                    }
+                    if (numAcert == 6)
+                    {
+                        printf("\nPrimer lugar:  ");
+                        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+                        for (int j = 0; j < 6; j++)
+                        {
+                            printf(" %d", b[i].n[j]);
+                        }
+                    }else if (numAcert == 5)
+                    {
+                        printf("\nSegundo lugar:  ");
+                        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+                        for (int j = 0; j < 6; j++)
+                        {
+                            printf(" %d", b[i].n[j]);
+                        }
+                    }else if (numAcert==4)
+                    {
+                        printf("\nTercer lugar:  ");
+                        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+                        for (int j = 0; j < 6; j++)
+                        {
+                            printf(" %d", b[i].n[j]);
+                        }
+                    }
+                }
+                printf("\n");
+                system("PAUSE");
+            break;
+            case 3:
+                numAcert = 0;
+                printf("GANADORES REVANCHITA: \n");
+                for(i=0;i<n;i++){
+
+                    for (j = 0; j < 6; j++)
+                    {
+                        if (b[i].n[j] = revancha[j])
+                        {
+                            numAcert+=1;
+                        }
+                    }
+                    if (numAcert == 6)
+                    {
+                        printf("\nPrimer lugar:  ");
+                        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+                        for (int j = 0; j < 6; j++)
+                        {
+                            printf(" %d", b[i].n[j]);
+                        }
+                    }else if (numAcert == 5)
+                    {
+                        printf("\nSegundo lugar:  ");
+                        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+                        for (int j = 0; j < 6; j++)
+                        {
+                            printf(" %d", b[i].n[j]);
+                        }
+                    }else if (numAcert==4)
+                    {
+                        printf("\nTercer lugar:  ");
+                        printf("Boleta ID: %d  Numeros seleccionados: ", b[i].id);
+                        for (int j = 0; j < 6; j++)
+                        {
+                            printf(" %d", b[i].n[j]);
+                        }
+                    }
+                }
+                printf("\n");
+                system("PAUSE");
+            break;
+            case 0:
+            break;
+            }
+    }while(op);
+}
+
+void reinicioApp(struct Boleta b[], int *n, int sorteoMelate[], int sorteoRevancha[],int sorteoRevanchita[]){
+    for (int i = 0; i < *n; i++)
+    {
+        for (int j = 0; j < 6; j++)
+        {
+            b[i].n[j] = 0;
+            sorteoMelate[i] = 0;
+            sorteoRevancha[i] = 0;
+            sorteoRevanchita[i] = 0;
+        }
+        b[i].id = 0;
+    }
+    sorteoMelate[6] = 0;
+    *n = 0;
+}
+
+void selectionSort(int *sort){
+    int ind, aux, j, k;
+    for (j = 0; j < 6; j++)
+    {
+        ind = j;
+        for ( k = (j+1); k < 6 ; k++)
+        {
+            if (sort[k] < sort[ind])
+            {
+                ind = k;
+            }
+            
+        }   
+        aux = sort[j];  
+        sort[j] = sort[ind];
+        sort[ind] = aux;   
+    }
+
+    for (j = 0; j < 6; j++)
+        {
+            Sleep(1000);
+            printf("%d ", sort[j]);
+        }
+    printf("\n");
+    
+}
+
+void ejecucionSorteo(int *sorteo){
+    int i, j, rep=0;
+    char *sort[] = {"Primero", "Segundo", "Tercer", "Cuarto", "Quinto", "Sexto"};
+    srand(time(NULL));
+    for (i = 0; i < 6; i++)
+    {
+        Sleep(1000);
+        printf("\n%s numero:    ", sort[i]);
+        *(sorteo+i) =  rand() % 56 + 1; //ENTRE 1 Y 56 = (N menor, M mayor -> %( M-N-1 ) + N )
+        printf("%d", *(sorteo+i));
+        if (i>0)
+        {
+            do
+            {
+                rep = 0;
+                for (j = 0; j<i ; j++)
+                {
+                    if (*(sorteo+i) == *(sorteo+j))
+                    {
+                        printf("\n\nNumero repetido, va de nuez...\n");
+                        rep = 1;
+                        Sleep(1000);
+                        printf("\n%s numero:    ", sort[i]);
+                        *(sorteo+i) =  rand() % 56 + 1; //ENTRE 1 Y 56 = (N menor, M mayor -> %( M-N-1 ) + N )
+                        printf("%d", *(sorteo+i));
+                    }
+                }
+            } while (rep==1);
+            rep = 0;
+        }
+    }
+    
+}
+
+
+
+void main(){
+    int op, n=0, cont=0, melate[7], revancha[6], revanchita[6], ind, aux;;
+
+    srand(time(NULL));
+    do{
+        // system("CLS");
+        printf("\n\n     Proyecto 2do Parcial-Equipo 5");
+        printf("\n--------------------------------------------------");
+        printf("\n Eliqe una de las siguientes opciones.");
+        printf("\n    [1] CAPTURA DE BOLETA.");
+        printf("\n    [2] EJECUCION DE SORTEO.");
+        printf("\n    [3] REPORTE DE BOLETAS CAPTURADAS.");
+        printf("\n    [4] REPORTE DE BOLETAS GANADORES.");
+        printf("\n    [5] REINICIO DE APLICACIONES.");
+        printf("\n    [6] SALIR.");
+        printf("\n    Ingrese el numero de la accion que desea realizar:\t");
+        scanf("%d", &op);
+        switch(op){
+        case 1:
+            cont = cont + n;
+            printf("\n      Cuantas boletas registrara?\t");
+            scanf("%d", &n);
+            n = cont + n;
+            capturaBoleta(boleta, n, cont);
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    ind = j;
+                    for ( int k = (j+1); k < 6 ; k++)
+                    {
+                        if (boleta[i].n[k] < boleta[i].n[ind])
+                        {
+                            ind = k;
+                        }
+                        
+                    }   
+                    aux = boleta[i].n[j];  
+                    boleta[i].n[j] = boleta[i].n[ind];
+                    boleta[i].n[ind] = aux;   
+                }
+            }
+            break;
+        case 2:
+            printf("Sorteo Melate");
+            ejecucionSorteo(melate);
+            printf("\nNUMERO ADICIONAL: ");
+            melate[6] = rand()%54 + 1;
+            Sleep(1000);
+            printf("%d", melate[6]);
+            Sleep(1000);
+            printf("\n\nNUMEROS GANADORES\n");
+            printf("Ordenados: ");
+            selectionSort(&melate[0]);
+
+            printf("\nSorteo revancha");
+            ejecucionSorteo(revancha);
+            Sleep(1000);
+            printf("\n\nNUMEROS GANADORES\n");
+            printf("Ordenados: ");
+            selectionSort(&revancha[0]);
+
+            printf("\nSorteo revanchita");
+            ejecucionSorteo(revanchita);
+            Sleep(1000);
+            printf("\n\nNUMEROS GANADORES\n");
+            printf("Ordenados: ");
+            selectionSort(&revanchita[0]);
+            printf("\n");
+            system("PAUSE");
+            break;
+        case 3:
+            printf("\n");
+            if (n == 0)
+            {
+                printf("No hay boletos registrados...");
+                system("PAUSE");
+            }
+            else
+            {
+                reporteBoletasCapturadas(boleta, n);
+                system("PAUSE");
+            }
+            
+            break;
+        case 4:
+            reporteBoletasGanadores(melate, revancha, revanchita, boleta, n);
+            system("PAUSE");
+            break;
+        case 5:
+            reinicioApp(boleta, &n, melate, revancha, revanchita);
+            printf("\nAplicacion Reiniciadose...\n");
+            system("PAUSE");
+            break;
+        case 6:
+            printf("\n       El programa finalizara.\n\n\t");
+            system("pause");
+            break;
+        }
+    }while(op != 6);
+}
