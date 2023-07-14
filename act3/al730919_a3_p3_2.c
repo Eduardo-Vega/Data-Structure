@@ -2,10 +2,6 @@
 #include <stdlib.h>
 
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 7 de octubre del 2022
- Problema 3.1 Actividad 3
  Descripción:
         Se almacenan hasta 100 pacientes de un hospital, se calcula el porcentaje de 
         Hombres y Mujeres, La cantidad de pacientes divididos por su estado de gravedad 

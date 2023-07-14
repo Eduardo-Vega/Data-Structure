@@ -1,11 +1,7 @@
 #include <stdio.h>
 
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 24 de septiembre del 2022
- Problema 2.2 Laboratorio 2
- Descripción:
+Description:
         Se suman dos arreglos bidimensionales de celdas y valores ingresados.
 ********************************************************************/
 

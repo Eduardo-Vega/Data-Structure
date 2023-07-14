@@ -2,12 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <windows.h>
-/*
-RUBÉN EDUARDO VEGA MAYORGA 
-730919
-ITC
-3 DE DICIEMBRE DEL 2022
-*/
+/***************************************
+Description:
+
+***************************************/
 typedef struct Vehiculo{
     char placas[10];
     char marca[10];

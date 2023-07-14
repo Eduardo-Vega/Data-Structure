@@ -1,16 +1,14 @@
 /****************************************
-       Materia: Estructura de Datos
-     #Programa: Laboratorio 3 Ejercicio 1
-   Descripción: Cuenta Caracteres
+   Description: Cuenta Caracteres
 ****************************************/
 #include <stdio.h>
 
-//Prototipo de la función Cuenta()
+//Prototipo de la funciï¿½n Cuenta()
 int Cuenta(char *, char);
 
 void main(void)
 {
-    // Declaración de variables
+    // Declaraciï¿½n de variables
     char Chr, Cadena[50];
     int Resultado;
     printf("\n -------------------------------------------");
@@ -23,7 +21,7 @@ void main(void)
     gets(Cadena);
     printf(" Ingrese el Caracter: ");
     Chr = getchar();
-    // Invoca la función que cuenta los carcateres
+    // Invoca la funciï¿½n que cuenta los carcateres
     Resultado = Cuenta(Cadena, Chr);
     printf("\n\n - %c se encuentra %d veces en la Cadena: %s ", Chr, Resultado, Cadena);
     printf("\n\n");
@@ -31,7 +29,7 @@ void main(void)
 
 }
 
-// Función para contar caracteres en una cadena
+// Funciï¿½n para contar caracteres en una cadena
 int Cuenta(char *Cadena, char Chr)
 {
 

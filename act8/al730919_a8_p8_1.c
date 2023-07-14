@@ -1,9 +1,6 @@
 /********************
-    Materia: Estructura de Datos
-    autores: Ricardo Guzman - 737080
-            Ivan Rangel - 737680
-            Ruben Eduardo Vega Mayorga- 730919
-            Rodrigo Bohorquez - 733014
+Desctiption:
+    
 ********************/
 #include <stdio.h>
 #include <conio.h>

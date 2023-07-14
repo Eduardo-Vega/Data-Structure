@@ -2,10 +2,6 @@
 #include <stdlib.h>
 
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 7 de octubre del 2022
- Problema 3.1 Actividad 3
  Descripción:
         Se guarda un arreglo unidimensional de tpo estructura Alumno para 
         determinar Su promedio en la 4ta materia y su promedio general,

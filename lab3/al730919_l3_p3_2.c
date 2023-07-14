@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 1 de octubre del 2022
- Problema 3.2 Laboratorio 3
- Descripcion:
+ Description:
     Se ingresan una n cantidad de cadenas de caracteres, y se realiza un intercambio
     con las cadena singresadas de forma que la primera sea la ultima, la segunda la
     penultima y así sucesivamente, se imprimen las cadenas originales y las resultantes.

@@ -1,10 +1,6 @@
 #include <stdio.h>
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 1 de octubre del 2022
- Problema 3.1 Laboratorio 3
- Descripcion:
+ Description:
     Se ingresa una cadena de caracteres y un caracter, se cuentan las veces
     que el caracter se encuentra en la cadena.
 ********************************************************************/

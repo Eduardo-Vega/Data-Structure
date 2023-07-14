@@ -3,7 +3,10 @@
 #include <string.h>
 #include <windows.h>
 
-// RUBEN EDUARDO VEG AMAYORGA  730919  7 DE DICIEMBRE DEL 2022
+/*****************************
+ Description: 
+    
+*****************************/
 
 typedef struct Viaje{
     char vuelo[6],transporte[20],equipamiento[8],origen[5],destino[5],estado[12];

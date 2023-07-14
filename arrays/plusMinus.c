@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /******************************************************************
- Descripción:
+ Description:
     Calculate the ratios of elements that are +, - and  0
     in an array.
 ********************************************************************/

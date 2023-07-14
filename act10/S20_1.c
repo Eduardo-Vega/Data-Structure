@@ -1,7 +1,6 @@
 /****************************************
-       Materia: Estructura de Datos
-     #Programa: Ejemplo S20.1
-   Descripción: Eliminaciones en Lista Simplemente Enlazada
+   Description: 
+        Eliminaciones en Lista Simplemente Enlazada
 ****************************************/
 
 #include<stdio.h>
@@ -83,7 +82,7 @@ void insertaAntes(apuntador *P, int num, int numref)
             band = 0;
     }
 
-    // Si se encontró la referencia
+    // Si se encontrï¿½ la referencia
     if (band) {
         // Asigna espacio de memoria al nuevo nodo
         nuevo = (nodo*) malloc(sizeof(nodo));
@@ -126,7 +125,7 @@ void insertaDespues(apuntador *P, int num, int numref)
             band = 0;
     }
 
-    // Si se encontró la referencia
+    // Si se encontrï¿½ la referencia
     if (band) {
         // Asigna espacio de memoria al nuevo nodo
         nuevo = (nodo*) malloc(sizeof(nodo));
@@ -164,7 +163,7 @@ void eliminaInicio(apuntador *P)
     printf("\n  El nodo = %d | Numero = %d | Siguiente = %d | ha sido eliminado! \n", ref, ref->num, ref->sig);
     // Se actualiza el apuntador apuntador de la lista
     *P = ref->sig;
-    // Se libera la dirección de memoria
+    // Se libera la direcciï¿½n de memoria
     free(ref);
     tam--;
     printf("\n  Borrado = %d | Numero = %d | Siguiente = %d |\n", ref, ref->num, ref->sig);
@@ -177,7 +176,7 @@ void eliminaFinal(apuntador *P)
     // Asigna apuntador a lista
     ref = *P;
 
-    // Verifica si es el último nodo
+    // Verifica si es el ï¿½ltimo nodo
     if (ref->sig == NULL)
         *P = NULL;
     else {
@@ -186,11 +185,11 @@ void eliminaFinal(apuntador *P)
             ant = ref;
             ref = ref->sig;
         }
-        // Limpia enlace del penúltimo nodo
+        // Limpia enlace del penï¿½ltimo nodo
         ant->sig = NULL;
     }
     printf("\n  El nodo = %d | Numero = %d | Siguiente = %d | ha sido eliminado! \n", ref, ref->num, ref->sig);
-    // Se libera la dirección de memoria
+    // Se libera la direcciï¿½n de memoria
     free(ref);
     tam--;
     printf("\n  Borrado = %d | Numero = %d | Siguiente = %d |\n", ref, ref->num, ref->sig);
@@ -216,7 +215,7 @@ eliminaNodo(apuntador *P, int numref)
             band = 0;
     };
 
-    // Si se encontró la referencia
+    // Si se encontrï¿½ la referencia
     if (band == 0) {
         printf("\n\n No se encontro el nodo de referencia \n\n");
         system("pause");
@@ -228,7 +227,7 @@ eliminaNodo(apuntador *P, int numref)
             ant->sig = ref->sig;
 
         printf("\n  El nodo = %d | Numero = %d | Siguiente = %d | ha sido eliminado! \n", ref, ref->num, ref->sig);
-        // Se libera la dirección de memoria
+        // Se libera la direcciï¿½n de memoria
         free(ref);
         tam--;
         printf("\n  Borrado = %d | Numero = %d | Siguiente = %d |\n", ref, ref->num, ref->sig);
@@ -273,7 +272,7 @@ void eliminaAntes(apuntador *P, int numref)
             else
                 aux->sig = ant->sig;
             printf("\n  El nodo = %d | Numero = %d | Siguiente = %d | ha sido eliminado! \n", ant, ant->num, ant->sig);
-            // Se libera la dirección de memoria
+            // Se libera la direcciï¿½n de memoria
             free(ant);
             tam--;
             printf("\n  Borrado = %d | Numero = %d | Siguiente = %d |\n\n", ant, ant->num, ant->sig);   system("pause");
@@ -284,7 +283,7 @@ void eliminaAntes(apuntador *P, int numref)
 
 void main()
 {
-    // Declaración de variables
+    // Declaraciï¿½n de variables
     apuntador P = NULL;
     int op, num, numref;
     do {
@@ -311,7 +310,7 @@ void main()
             case 1: system("cls");
                     printf("\n Ingresa un numero entero: ");
                     scanf("%d",&num);
-                    insertaInicio(&P, num); // Dirección del apuntador
+                    insertaInicio(&P, num); // Direcciï¿½n del apuntador
                     printf("\n\n Cantidad actual de nodos: %d \n\n",tam);
                     system("pause");
                     break;
@@ -319,7 +318,7 @@ void main()
             case 2: system("cls");
                     printf("\n Ingresa un numero entero: ");
                     scanf("%d",&num);
-                    insertaFinal(&P, num); // Dirección del apuntador
+                    insertaFinal(&P, num); // Direcciï¿½n del apuntador
                     printf("\n\n Cantidad actual de nodos: %d \n\n",tam);
                     system("pause");
                     break;

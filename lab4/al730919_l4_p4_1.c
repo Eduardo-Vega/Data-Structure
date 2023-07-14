@@ -2,10 +2,6 @@
 #include <string.h>
 
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 1 de octubre del 2022
- Problema 4.1 Laboratorio 4
  Descripcion:
     El programa es capaz de almacenar hasta 50 libros con su respectivo
     título, autor, editorial, año e isbn.

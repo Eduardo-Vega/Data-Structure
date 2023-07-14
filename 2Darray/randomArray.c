@@ -3,13 +3,9 @@
 #include <time.h>
 
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 7 de octubre del 2022
- Problema 2.2 Actividad 2
  Descripción:
-        Se crea una matriz de 3x4 con números enteros aleatoreos entre 20 y 50
-        y se calcula el totalde las filas y las columnas.
+        Create an 3x4 array with integer numbers between 20 n 50
+        to calc rows n columns totals.
 ********************************************************************/
 
 void main()
@@ -31,7 +27,7 @@ void main()
         }
         
     }
-    printf("\n---ARREGLO GENERADO CON NUMEROS ALEATOREOS ENTRE 20 Y 50---\n");
+    printf("\n---RANDOM ARRAY GENERATED BETWEEN 20 N 50---\n");
     printf("\n\t ---------------------------    Total=\n");
     for ( i = 0; i < 3; i++)
     {
@@ -50,6 +46,6 @@ void main()
     {
         printf("%d    ", sumc[i]);
     }
-    printf("\n\n");
-    system("PAUSE");
+    printf("\n");
+    getchar();
 }

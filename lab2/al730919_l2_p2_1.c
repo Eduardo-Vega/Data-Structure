@@ -1,11 +1,7 @@
 #include <stdio.h>
 
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 24 de septiembre del 2022
- Problema 2.1 Laboratorio 2
- Descripcion:
+ Description:
     Se calcula la suma total y el promedio de un arreglo bidimensional
     de celdas y valores ingresados.
 ********************************************************************/

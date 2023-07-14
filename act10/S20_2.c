@@ -1,7 +1,6 @@
 /****************************************
-       Materia: Estructura de Datos
-     #Programa: Ejemplo S20.2
-   Descripción: Búsquedas en Lista Simplemente Enlazada
+   Description: 
+        Busquedas en Lista Simplemente Enlazada
 ****************************************/
 
 #include<stdio.h>
@@ -132,7 +131,7 @@ void busquedaRecursiva(apuntador P, int numref)
 
 void main()
 {
-    // Declaración de variables
+    // Declaraciï¿½n de variables
     apuntador P = NULL;
     int op, num, numref;
     do {
@@ -156,7 +155,7 @@ void main()
             case 1: system("cls");
                     printf("\n Ingresa un numero entero: ");
                     scanf("%d",&num);
-                    insertaInicio(&P, num); // Dirección del apuntador
+                    insertaInicio(&P, num); // Direcciï¿½n del apuntador
                     printf("\n Cantidad actual de nodos: %d \n\n",tam);
                     system("pause");
                     break;
@@ -164,7 +163,7 @@ void main()
             case 2: system("cls");
                     printf("\n Ingresa un numero entero: ");
                     scanf("%d",&num);
-                    insertaFinal(&P, num); // Dirección del apuntador
+                    insertaFinal(&P, num); // Direcciï¿½n del apuntador
                     printf("\n Cantidad actual de nodos: %d \n\n",tam);
                     system("pause");
                     break;

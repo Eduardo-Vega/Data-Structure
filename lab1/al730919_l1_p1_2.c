@@ -1,11 +1,7 @@
 #include <stdio.h>
 
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 24 de septiembre del 2022
- Problema 1.2 Laboratorio 1
- Descripción:
+ Description:
         Conteo de la cantidad de positivos, negativos y nulos en el arreglo
         ingresado.
 ********************************************************************/

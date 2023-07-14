@@ -1,11 +1,7 @@
 #include <stdio.h>
 
 /******************************************************************
- Nombre: Ruben Eduardo Vega Mayorga
- Matricula: 730919
- Fecha: 24 de septiembre del 2022
- Problema 1.3 Laboratorio 1
- Descripción:
+ Description:
         Calculo de la suma de dos arreglos ingresados.
 ********************************************************************/
 

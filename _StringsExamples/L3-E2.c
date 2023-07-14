@@ -1,21 +1,20 @@
 /****************************************
-       Materia: Estructura de Datos
-     #Programa: Laboratorio 3 Ejercicio 2
-   Descripción: Invierte Orden de Cadenas
+Description: 
+Invierte Orden de Cadenas
 ****************************************/
 
 #include <stdio.h>
 #include <string.h>
 
-//Prototipo de la función Cambia()
+//Prototipo de la funciï¿½n Cambia()
 void Cambia(char Cadena[][50], int);
 
 
 void main(void)
 {
-    // Declaración de variables
+    // Declaraciï¿½n de variables
     int i, n;
-    // Declaración de arreglo
+    // Declaraciï¿½n de arreglo
     char Cadena[20][50];
     printf("\n -------------------------------------------");
     printf("\n   Invertir Orden de Cadenas de Caracter    ");
@@ -36,7 +35,7 @@ void main(void)
     }
 
     printf("\n\n");
-    //Invoca la función que intercambia las cadenas
+    //Invoca la funciï¿½n que intercambia las cadenas
     Cambia(Cadena, n);
 
     // Impresion de Arreglo
@@ -51,20 +50,20 @@ void main(void)
     system("pause");
 }
 
-// Función para intercambiar cadenas
+// Funciï¿½n para intercambiar cadenas
 void Cambia(char Cadena[][50], int n)
 {
-    //Declaración de variables
+    //Declaraciï¿½n de variables
     int i, j;
-    //Ultima posición
+    //Ultima posiciï¿½n
     j = n - 1;
     char Temp[50];
     // Ciclo para intercambiar valores
     for (i=0; i < (n/2); i++)
     {
         strcpy(Temp, Cadena[i]);       // Copia cadena actual a temp
-        strcpy(Cadena[i], Cadena[j]);  // Copia última cadena a actual
-        strcpy(Cadena[j], Temp);       // Copia temp a última cadena
+        strcpy(Cadena[i], Cadena[j]);  // Copia ï¿½ltima cadena a actual
+        strcpy(Cadena[j], Temp);       // Copia temp a ï¿½ltima cadena
         j--;
     }
 }

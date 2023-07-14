@@ -2,12 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 /********
-    Materia: Estructura de Datos
-    autores: Ricardo Guzman - 737080
-            Ivan Rangel - 737680
-            Ruben Vega - 730919
-            Rodrigo Bohorquez - 733014
-    Proyecto 1 Parcial 1: Gasolinera
+Description: 
+    
 ********/
 float montoConsumido[2] = {0};
 int i = 0, j = 0, k = 0;
