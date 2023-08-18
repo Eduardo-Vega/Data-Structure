@@ -6,11 +6,12 @@
 ********************************************************************/
 #define N 3
 #define M 2
-//print any 2D array function
-void printArr(int *arr,int n, int m) {
+//print 2D array function
+void printArr(int n, int m, int arr[n][m]) {
     //go to through array
     for (int i = 0; i < n*m; i++) {
-        printf("%2d\t", arr[i]);
+
+        printf("%2d\t", arr[i / m][i % m]);
         //line jump
         if ((i+1) % m == 0) { printf("\n"); }
     }
@@ -25,31 +26,31 @@ void transposeArr(int arr[][N], int flipArr[][M]){
 }
 //plus function
 void transposePlus(int A[][M], int B[][N], int C[][M]) {
-    //get B array transpose
+    //getting B array transpose
     transposeArr(B, C);
     //print result
     printf("  Result\n");
     //point to first elem to go through arrays
     int *Ap = &A[0][0]; int *Cp = &C[0][0];
-    //plus result calc n print it
+    //plus result calc and print
     for (int i = 0; i < N*M; i++) {
         printf("%2d\t", Ap[i] + Cp[i]);
         //line jump
         if ((i+1) % M == 0){ printf("\n"); }
     }
     printf("\n  A array\n");                    //print A[N}[M] array
-    printArr(&A[0][0], N, M);
+    printArr(N, M, A);
 
     printf("\n  B array\n");                    //print B[M][N] array
-    printArr(&B[0][0], M, N);
+    printArr(M, N, B);
 
     printf("\nB transpose\n");                  //print B transpose
-    printArr(&C[0][0], N, M);
+    printArr(N, M, C);
 }
 
 void main()
 {
-    //initialize arrays
+    //initializing arrays
     int A[N][M] = {
         1, 2, 
         3, 4, 
