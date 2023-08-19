@@ -4,8 +4,8 @@
  Description:
         Plus A array and fliped B array
 ********************************************************************/
-#define N 3
-#define M 2
+
+
 //print 2D array function
 void printArr(int n, int m, int arr[n][m]) {
     //go to through array
@@ -17,15 +17,15 @@ void printArr(int n, int m, int arr[n][m]) {
     }
 }
 //flip MxN array to NxM function
-void transposeArr(int arr[][N], int flipArr[][M]){
-    for (int i = 0; i < M; i++) {
-        for (int j = 0; j < N; j++) {
+void transposeArr(int arr[][2], int flipArr[][3]){
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 2; j++) {
             flipArr[j][i] = arr[i][j];
         }
     }
 }
 //plus function
-void transposePlus(int A[][M], int B[][N], int C[][M]) {
+void transposePlus(int A[][3], int B[][2], int C[][3]) {
     //getting B array transpose
     transposeArr(B, C);
     //print result
@@ -33,34 +33,34 @@ void transposePlus(int A[][M], int B[][N], int C[][M]) {
     //point to first elem to go through arrays
     int *Ap = &A[0][0]; int *Cp = &C[0][0];
     //plus result calc and print
-    for (int i = 0; i < N*M; i++) {
+    for (int i = 0; i < 2*3; i++) {
         printf("%2d\t", Ap[i] + Cp[i]);
         //line jump
-        if ((i+1) % M == 0){ printf("\n"); }
+        if ((i+1) % 2 == 0){ printf("\n"); }
     }
     printf("\n  A array\n");                    //print A[N}[M] array
-    printArr(N, M, A);
+    printArr(3, 2, A);
 
     printf("\n  B array\n");                    //print B[M][N] array
-    printArr(M, N, B);
+    printArr(2, 3, B);
 
     printf("\nB transpose\n");                  //print B transpose
-    printArr(N, M, C);
+    printArr(3, 2, C);
 }
 
 void main()
 {
     //initializing arrays
-    int A[N][M] = {
+    int A[2][3] = {
         1, 2, 
         3, 4, 
         5, 6
     };
-    int B[M][N] = {
+    int B[3][2] = {
          7, 8, 9,
         10,11,12
     };
-    int C[N][M] = {0};
+    int C[2][3] = {0};
     //plus A array + B array transpose function call
     transposePlus(A, B, C);
     getchar();
